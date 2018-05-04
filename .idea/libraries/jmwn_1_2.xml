@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jmwn-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jmwn-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/jmwn-1.2.jar!/javadoc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

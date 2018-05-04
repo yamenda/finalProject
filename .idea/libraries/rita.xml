@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="rita">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../FinalMaven/rita.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../FinalMaven/rita.support.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
