@@ -150,7 +150,6 @@ public class MysqlDictionary implements DictionaryDatabase {
         IndexWord word = (IndexWord) entityCache.get(key);
 
         if (word == null) {
-
             word = IndexWord.parseIndexWord(this, pos, lemma, language);
             entityCache.put(key, word);
         }

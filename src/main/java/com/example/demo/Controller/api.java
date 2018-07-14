@@ -1,9 +1,18 @@
 package com.example.demo.Controller;
 
 
+import com.example.demo.model.DeafGrammar;
+import com.example.demo.model.GrammarsFactory;
 import com.example.demo.model.StringText;
 import com.example.demo.wordnet.*;
-import com.sun.org.apache.bcel.internal.generic.NEW;
+import edu.stanford.nlp.ling.*;
+import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
+import edu.stanford.nlp.process.CoreLabelTokenFactory;
+import edu.stanford.nlp.process.PTBTokenizer;
+import edu.stanford.nlp.process.TokenizerFactory;
+import edu.stanford.nlp.simple.Document;
+import edu.stanford.nlp.simple.Sentence;
+import edu.stanford.nlp.trees.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,15 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import rita.RiTa;
-import rita.RiWordNet;
-//import rita.wordnet.jwnl.JWNL;
-//import rita.wordnet.jwnl.dictionary.Dictionary;
-//import rita.wordnet.jwnl.wndata.IndexWord;
-//import rita.wordnet.jwnl.wndata.POS;
-//import rita.wordnet.jwnl.wndata.Synset;
-
-import javax.validation.constraints.Null;
-import java.io.FileInputStream;
+import java.io.StringReader;
 import java.util.*;
 
 @RestController
@@ -38,13 +39,6 @@ public class api {
     public List<Domain> results(@RequestBody StringText text) {
         String alltext = text.text;
 
-//        RiWordNet wordnet = new RiWordNet("C:\\wn3.1.dict\\dict");
-//        float f = wordnet.getDistance("saving", "deferred_payment", "n");
-//        float f1 = wordnet.getDistance("economic_system", "deferred_payment", "n");
-//
-//        float f2 =  RiTa.minEditDistance("saving", "deferred_payment");
-//        float f3 = RiTa.minEditDistance("economic_system", "deferred_payment");
-
         List<words> list = getSynsets(alltext);
 
         List<WordWithDomain> listWordDomain = getWordsWithDomain(list);
@@ -55,6 +49,25 @@ public class api {
 
         return domainList;
     }
+
+    @RequestMapping(value = "/openie", method = RequestMethod.POST)
+    public String grammarProcess(@RequestBody StringText textObj){
+        String text = textObj.text;
+        Document doc = new Document(text);
+        List<Sentence> sentences = doc.sentences();
+
+        GrammarsFactory gFactory = new GrammarsFactory();
+
+        String finalRes = "";
+        for (Sentence item : doc.sentences()) {
+            String afterConverting = gFactory.getGrammar(item.text());
+            item.text().replace(item.text(), afterConverting);
+            finalRes += afterConverting;
+        }
+
+        return finalRes;
+    }
+
 
     public String[] tokenize(String text) {
         String[] res;
@@ -74,7 +87,7 @@ public class api {
         String[] posString = RiTa.getPosTags(text);
         String[] wordString = tokenize(text);
 
-        List<POS> posArray = convertPos(posString, wordString);
+        List<POS> posArray = convertPos(posString);
 
         Map<String,POS> map = new HashMap<>();
 
@@ -84,15 +97,12 @@ public class api {
         return map;
     }
 
-    public List<POS> convertPos(String[] pos, String[] wordsArray) {
+    public List<POS> convertPos(String[] pos) {
         List<POS> res = new ArrayList<>();
         POS temp = new POS("temp" , "t");
         for (int i = 0; i< pos.length ; i++) {
             if(pos[i].equals("nn") || pos[i].equals("nns") || pos[i].equals("nnp") || pos[i].equals("nnps")) {
                 res.add(POS.NOUN);
-//                if(pos[i].equals("nns") || pos[i].equals("nnps")) {
-//                    wordsArray[i] = RiTa.stem(wordsArray[i]);
-//                }
             }else if(pos[i].equals("vb") || pos[i].equals("vbd") || pos[i].equals("vbg") || pos[i].equals("vbn") || pos[i].equals("vbp") || pos[i].equals("vbz")) {
                 res.add(POS.VERB);
             }else if(pos[i].equals("jj") || pos[i].equals("jjr")  || pos[i].equals("jjs") ) {
@@ -307,6 +317,5 @@ public class api {
         }
         return res;
     }
-
 
 }
