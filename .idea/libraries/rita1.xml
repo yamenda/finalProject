@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/rita.jar!/" />
       <root url="jar://$PROJECT_DIR$/rita.support.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stanford-openie.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

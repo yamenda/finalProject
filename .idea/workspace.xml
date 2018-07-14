@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89ec45db-57aa-4913-a311-b78545ca7e79" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rita1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rita.xml" afterPath="" />
+    <list default="true" id="89ec45db-57aa-4913-a311-b78545ca7e79" name="Default" comment="add deaf grammar simple grammar">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__edu_stanford_nlp_stanford_parser_3_6_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Controller/api.class" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Controller/api.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/example/demo/wordnet/MysqlDictionary.class" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/wordnet/MysqlDictionary.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rita1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rita1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final.iml" afterPath="$PROJECT_DIR$/final.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,13 +22,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="api.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="200">
+              <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#get#0;class#api#0" expanded="false" />
+                <element signature="method#results#0;class#api#0" expanded="false" />
                 <element signature="method#tokenize#0;class#api#0" expanded="false" />
                 <element signature="method#pos#0;class#api#0" expanded="false" />
                 <element signature="method#convertPos#0;class#api#0" expanded="false" />
@@ -43,38 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Domain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
+      <file leaf-file-name="GrammarsFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/GrammarsFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#481#482#0" expanded="true" />
-                <element signature="e#527#528#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#935#936#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-                <element signature="e#1204#1205#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1424#1425#0" expanded="true" />
-                <element signature="e#1463#1464#0" expanded="true" />
-                <element signature="e#1497#1498#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordWithDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/WordWithDomain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="288">
+              <caret line="54" column="27" lean-forward="false" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,47 +60,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="words.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java">
+      <file leaf-file-name="SimpleGrammar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/SimpleGrammar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MysqlDictionary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="73">
+              <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
-                <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
-                <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
-                <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
-                <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
-                <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-                <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-                <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-                <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-                <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexWord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/IndexWord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
-                <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
               </folding>
             </state>
           </provider>
@@ -133,6 +77,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -142,6 +87,9 @@
       <find>synsetOffsets</find>
       <find>word</find>
       <find>getIndexWordAt(</find>
+      <find>calculateWeightDomain</find>
+      <find>calculateWeight</find>
+      <find>index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,17 +106,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/util/Cache.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/util/LRUCache.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/DictionaryDatabase.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/model/StringText.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/IndexWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/POS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/Synset.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/Controller/WordWithDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/demo/model/DeafGrammar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/demo/model/SimpleGrammar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/demo/model/GrammarsFactory.java" />
       </list>
     </option>
   </component>
@@ -206,14 +157,65 @@
               <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalProject" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="wordnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,13 +226,15 @@
     <property name="project.structure.proportion" value="0.13903281" />
     <property name="project.structure.side.proportion" value="0.40295118" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/rita.support.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/github-project/finalProject/src/main/java/com/example/demo/Controller/api.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -358,12 +362,29 @@
       <workItem from="1524410810636" duration="83000" />
       <workItem from="1524840109770" duration="30170000" />
       <workItem from="1525441274853" duration="656000" />
-      <workItem from="1528661905869" duration="1128000" />
+      <workItem from="1528661905869" duration="16225000" />
+      <workItem from="1530571012191" duration="17337000" />
+      <workItem from="1531489444240" duration="44471000" />
     </task>
+    <task id="LOCAL-00001" summary="add rita library">
+      <created>1528664747293</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528664747293</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add deaf grammar simple grammar">
+      <created>1531595569242</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531595569242</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79616000" />
+    <option name="totallyTimeSpent" value="156521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -380,13 +401,14 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16088328" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14826499" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -398,7 +420,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16876972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -409,284 +430,83 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add rita library" />
+    <MESSAGE value="add deaf grammar simple grammar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add deaf grammar simple grammar" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>236</line>
+          <line>235</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>302</line>
+          <line>301</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>277</line>
+          <line>276</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>279</line>
+          <line>278</line>
           <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>280</line>
+          <line>279</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java</url>
-          <line>276</line>
+          <line>275</line>
           <properties />
           <option name="timeStamp" value="77" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="191" />
+      <option name="time" value="280" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="synset" />
-        <watch expression="indexWords" />
-        <watch expression="indexWords" />
-        <watch expression="indexWords" />
-        <watch expression="wordsArray" />
-        <watch expression="posString" />
-        <watch expression="posArray" />
-        <watch expression="wordString" />
-        <watch expression="word" />
-        <watch expression="pos" />
-        <watch expression="list" />
-        <watch expression="similer" />
-        <watch expression="list" />
-        <watch expression="map" />
-        <watch expression="domainList" />
+        <watch expression="test" />
+        <watch expression="grammaticalRelation" />
+        <watch expression="t" />
+        <watch expression="t" />
+        <watch expression="label" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/WordWithDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/IndexWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
-            <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#get#0;class#api#0" expanded="false" />
-            <element signature="method#tokenize#0;class#api#0" expanded="false" />
-            <element signature="method#pos#0;class#api#0" expanded="false" />
-            <element signature="method#convertPos#0;class#api#0" expanded="false" />
-            <element signature="method#getSynsets#0;class#api#0" expanded="false" />
-            <element signature="method#getWordsWithDomain#0;class#api#0" expanded="false" />
-            <element signature="method#getByDomain#0;class#api#0" expanded="false" />
-            <element signature="method#getDomains#0;class#api#0" expanded="false" />
-            <element signature="method#getDomainByName#0;class#api#0" expanded="false" />
-            <element signature="method#calculateWeight#0;class#api#0" expanded="false" />
-            <element signature="method#separateText#0;class#api#0" expanded="false" />
-            <element signature="method#calculateWeightDomain#0;class#api#0" expanded="false" />
-            <element signature="method#sumArray#0;class#api#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/WordWithDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/IndexWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
-            <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#get#0;class#api#0" expanded="false" />
-            <element signature="method#tokenize#0;class#api#0" expanded="false" />
-            <element signature="method#pos#0;class#api#0" expanded="false" />
-            <element signature="method#convertPos#0;class#api#0" expanded="false" />
-            <element signature="method#getSynsets#0;class#api#0" expanded="false" />
-            <element signature="method#getWordsWithDomain#0;class#api#0" expanded="false" />
-            <element signature="method#getByDomain#0;class#api#0" expanded="false" />
-            <element signature="method#getDomains#0;class#api#0" expanded="false" />
-            <element signature="method#getDomainByName#0;class#api#0" expanded="false" />
-            <element signature="method#calculateWeight#0;class#api#0" expanded="false" />
-            <element signature="method#separateText#0;class#api#0" expanded="false" />
-            <element signature="method#calculateWeightDomain#0;class#api#0" expanded="false" />
-            <element signature="method#sumArray#0;class#api#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1424#1425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,9 +515,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -708,15 +526,17 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#getSynsetAt#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
+            <element signature="method#getDomain#0;class#MysqlDictionary#0" expanded="false" />
+            <marker date="1528667265271" expanded="true" signature="6866:6986" ph="SELECT lemma... missingValue_index" />
+            <marker date="1528667265271" expanded="true" signature="7913:7991" ph="SELECT id fr... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="8965:9034" ph="select * fro... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="10406:10464" ph="select * fro... missingValue_synset" />
           </folding>
         </state>
       </provider>
@@ -726,7 +546,7 @@
         <state relative-caret-position="748">
           <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
             <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
           </folding>
@@ -738,7 +558,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#get#0;class#api#0" expanded="false" />
+            <element signature="method#results#0;class#api#0" expanded="false" />
             <element signature="method#tokenize#0;class#api#0" expanded="false" />
             <element signature="method#pos#0;class#api#0" expanded="false" />
             <element signature="method#convertPos#0;class#api#0" expanded="false" />
@@ -760,22 +582,8 @@
         <state relative-caret-position="238">
           <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1424#1425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -784,9 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -797,15 +603,17 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#getSynsetAt#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
+            <element signature="method#getDomain#0;class#MysqlDictionary#0" expanded="false" />
+            <marker date="1528667265271" expanded="true" signature="6866:6986" ph="SELECT lemma... missingValue_index" />
+            <marker date="1528667265271" expanded="true" signature="7913:7991" ph="SELECT id fr... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="8965:9034" ph="select * fro... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="10406:10464" ph="select * fro... missingValue_synset" />
           </folding>
         </state>
       </provider>
@@ -815,7 +623,7 @@
         <state relative-caret-position="748">
           <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
             <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
           </folding>
@@ -827,7 +635,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#get#0;class#api#0" expanded="false" />
+            <element signature="method#results#0;class#api#0" expanded="false" />
             <element signature="method#tokenize#0;class#api#0" expanded="false" />
             <element signature="method#pos#0;class#api#0" expanded="false" />
             <element signature="method#convertPos#0;class#api#0" expanded="false" />
@@ -849,22 +659,8 @@
         <state relative-caret-position="238">
           <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1424#1425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,9 +669,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -886,15 +680,17 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#getSynsetAt#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
             <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
+            <element signature="method#getDomain#0;class#MysqlDictionary#0" expanded="false" />
+            <marker date="1528667265271" expanded="true" signature="6866:6986" ph="SELECT lemma... missingValue_index" />
+            <marker date="1528667265271" expanded="true" signature="7913:7991" ph="SELECT id fr... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="8965:9034" ph="select * fro... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="10406:10464" ph="select * fro... missingValue_synset" />
           </folding>
         </state>
       </provider>
@@ -904,7 +700,7 @@
         <state relative-caret-position="901">
           <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
             <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
           </folding>
@@ -923,7 +719,9 @@
         <state relative-caret-position="714">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#get#0;class#api#0" expanded="false" />
+            <element signature="method#results#0;class#api#0" expanded="false" />
             <element signature="method#tokenize#0;class#api#0" expanded="false" />
             <element signature="method#pos#0;class#api#0" expanded="false" />
             <element signature="method#convertPos#0;class#api#0" expanded="false" />
@@ -955,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="44" column="39" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/conf/multiwordnet.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -969,40 +760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionaryDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/StringText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/util/Cache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,20 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/Synset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlIndexWord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -1071,87 +818,223 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/util/Cache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/IndexWord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="1428">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#initializeFrom#0;class#IndexWord#0" expanded="false" />
             <marker date="1523993982435" expanded="true" signature="1966:2061" ph="SELECT id_mi... missingValue_index" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="522">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
-            <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
-            <marker date="1524241946762" expanded="true" signature="6867:6987" ph="SELECT lemma... missingValue_index" />
-            <marker date="1524241946762" expanded="true" signature="7914:7992" ph="SELECT id fr... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="8966:9035" ph="select * fro... missingValue_synset" />
-            <marker date="1524241946762" expanded="true" signature="10407:10465" ph="select * fro... missingValue_synset" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1424#1425#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/Synset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="100">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <marker date="1524236486834" expanded="true" signature="2591:2714" ph="SELECT word,... missingValue_synset" />
+            <marker date="1524236486834" expanded="true" signature="7251:7371" ph="SELECT type,... common_relation" />
+            <marker date="1524236486834" expanded="true" signature="8332:8480" ph="SELECT type,... missingValue_relation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionaryDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/WordWithDomain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/MysqlDictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="152" column="19" lean-forward="false" selection-start-line="152" selection-start-column="19" selection-end-line="152" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#setEntityCache#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#getSynsetAt#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#lookupIndexWord#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#encode#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#searchIndexWords#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#synsets#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#allSynsetIdsForWord#0;class#MysqlDictionary#0" expanded="false" />
+            <element signature="method#getDomain#0;class#MysqlDictionary#0" expanded="false" />
+            <marker date="1528667265271" expanded="true" signature="6866:6986" ph="SELECT lemma... missingValue_index" />
+            <marker date="1528667265271" expanded="true" signature="7913:7991" ph="SELECT id fr... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="8965:9034" ph="select * fro... missingValue_synset" />
+            <marker date="1528667265271" expanded="true" signature="10406:10464" ph="select * fro... missingValue_synset" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/Domain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/wordnet/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+        <state relative-caret-position="204">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/StringText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/words.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="86" column="18" lean-forward="false" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/DeafGrammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.9.1/stanford-corenlp-3.9.1.jar!/edu/stanford/nlp/simple/Sentence.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.29/tomcat-embed-core-8.5.29.jar!/org/apache/catalina/core/StandardWrapperValve.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.29/tomcat-embed-core-8.5.29.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="502" column="0" lean-forward="false" selection-start-line="502" selection-start-column="0" selection-end-line="502" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="425" column="0" lean-forward="false" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="571" column="0" lean-forward="false" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/SimpleGrammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controller/api.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="200">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#get#0;class#api#0" expanded="false" />
+            <element signature="method#results#0;class#api#0" expanded="false" />
             <element signature="method#tokenize#0;class#api#0" expanded="false" />
             <element signature="method#pos#0;class#api#0" expanded="false" />
             <element signature="method#convertPos#0;class#api#0" expanded="false" />
@@ -1164,6 +1047,16 @@
             <element signature="method#separateText#0;class#api#0" expanded="false" />
             <element signature="method#calculateWeightDomain#0;class#api#0" expanded="false" />
             <element signature="method#sumArray#0;class#api#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/GrammarsFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="54" column="27" lean-forward="false" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
