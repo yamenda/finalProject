@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import rita.RiTa;
+import rita.support.Regex;
+
 import java.io.StringReader;
 import java.util.*;
 
@@ -54,11 +56,15 @@ public class api {
     public String grammarProcess(@RequestBody StringText textObj){
         String text = textObj.text;
         Document doc = new Document(text);
+        Properties prop = new Properties();
+
         List<Sentence> sentences = doc.sentences();
 
         GrammarsFactory gFactory = new GrammarsFactory();
 
         String finalRes = "";
+
+
         for (Sentence item : doc.sentences()) {
             String afterConverting = gFactory.getGrammar(item.text());
             item.text().replace(item.text(), afterConverting);

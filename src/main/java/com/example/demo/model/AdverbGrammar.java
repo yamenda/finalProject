@@ -1,15 +1,17 @@
 package com.example.demo.model;
 
 import edu.stanford.nlp.trees.*;
-import javafx.util.Pair;
 import rita.RiTa;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class SimpleGrammar implements DeafGrammar {
+public class AdverbGrammar implements DeafGrammar {
     @Override
     public String getGrammar() {
-        return "Subject : verb : end of sentence";
+        return "Subject : Adverb of time : Verb : End of sentence : adverbs of place";
     }
 
     @Override
@@ -19,8 +21,6 @@ public class SimpleGrammar implements DeafGrammar {
         GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
         GrammaticalStructure gs = gsf.newGrammaticalStructure(tree);
         Collection<TypedDependency> testDepList = gs.typedDependenciesCollapsed();
-
-//        List<Pair<String, String>> sentenceList = new ArrayList<>();
 
         Map<String,String> sentenceList = new HashMap<>();
 
@@ -37,16 +37,32 @@ public class SimpleGrammar implements DeafGrammar {
                 sentenceList.put("subject", RiTa.stem(tDep.dep().value()));
             }
 
+            //find the adverbe of time
+            if(tDep.reln().toString().equalsIgnoreCase("nmod:tmod")) {
+                sentenceList.put("adverbTime", RiTa.stem(tDep.dep().value()));
+            }
+
+            //find the adverbe of place
+            if(tDep.reln().toString().equalsIgnoreCase("nmod:in")) {
+                sentenceList.put("adverbPlace",tDep.reln().getSpecific() + " " + RiTa.stem(tDep.dep().value()));
+            }
+
+
             if(tDep.reln().toString().equalsIgnoreCase("dobj")
                     || tDep.reln().toString().equalsIgnoreCase("amod")
-                    || tDep.reln().getShortName().equalsIgnoreCase("nmod") ) {
+                    || (tDep.reln().getShortName().equalsIgnoreCase("nmod") && tDep.reln().getSpecific().equalsIgnoreCase("to")) ) {
                 sentenceList.put("etc", RiTa.stem(tDep.dep().value()));
             }
+
         }
+
 
         String res = "";
         if(sentenceList.containsKey("subject")) {
             res += sentenceList.get("subject") + " ";
+        }
+        if(sentenceList.containsKey("adverbTime")) {
+            res += sentenceList.get("adverbTime") + " ";
         }
         if(sentenceList.containsKey("verb")) {
             res += sentenceList.get("verb") + " ";
@@ -54,6 +70,15 @@ public class SimpleGrammar implements DeafGrammar {
         if(sentenceList.containsKey("etc")) {
             res += sentenceList.get("etc") + " ";
         }
+        if(sentenceList.containsKey("adverbPlace")) {
+            res += sentenceList.get("adverbPlace") + " ";
+        }
+
+
+
+
+
+
 
         return res;
     }

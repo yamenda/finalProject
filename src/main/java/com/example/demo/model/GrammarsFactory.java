@@ -44,8 +44,12 @@ public class GrammarsFactory {
 
             Label label = test.label();
             if(label.toString().equalsIgnoreCase("s") && !test.getChild(0).label().toString().equalsIgnoreCase("s")){
+
+                gs = gsf.newGrammaticalStructure(test);
+                Collection<TypedDependency> tempdepList = gs.typedDependenciesCollapsed();
+
                 //the condition of simple Grammar
-                if(!this.checkTreeChildren(test, "TEST")) {
+                if(!this.checkTreeDep(tempdepList, "nmod:tmod") && !this.checkTreeDep(tempdepList, "nmod:in")) {
                     DeafGrammar grammar = grammarList.get("simple");
                     if(grammar == null) {
                         grammar = new SimpleGrammar();
@@ -54,6 +58,19 @@ public class GrammarsFactory {
                     // convert into spicific rules
                     result += grammar.convert(test) + " ";
                 }
+
+                //the condition of adverbs statement Grammar
+                if(this.checkTreeDep(tempdepList, "nmod:tmod") || this.checkTreeDep(tempdepList, "nmod:in")) {
+                    DeafGrammar grammar = grammarList.get("adverbs");
+                    if(grammar == null) {
+                        grammar = new AdverbGrammar();
+                        grammarList.put("adverbs", grammar);
+                    }
+                    // convert into spicific rules
+                    result += grammar.convert(test) + " ";
+                }
+
+
             }
 
             if(sib != null && !label.toString().equalsIgnoreCase("s")) {
@@ -69,8 +86,6 @@ public class GrammarsFactory {
         return result;
     }
 
-
-
     private boolean checkTreeSbilings(List<Tree> list , String label) {
         for(Tree tree: list){
             if(tree.label().toString().equalsIgnoreCase(label)) {
@@ -80,7 +95,6 @@ public class GrammarsFactory {
         return false;
     }
 
-
     private boolean checkTreeChildren(Tree tree , String label) {
         for (Iterator<Tree> it = tree.iterator(); it.hasNext();) {
             Tree temp = it.next();
@@ -88,6 +102,18 @@ public class GrammarsFactory {
                 return true;
             }
         }
+        return false;
+    }
+
+    private boolean checkTreeDep(Collection<TypedDependency> list, String dependency) {
+
+        for(Iterator<TypedDependency> it = list.iterator(); it.hasNext(); ) {
+            TypedDependency tDep = it.next();
+            if(tDep.reln().toString().equalsIgnoreCase(dependency)) {
+                return true;
+            }
+        }
+
         return false;
     }
 
