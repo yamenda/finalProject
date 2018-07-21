@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.regrammar;
 
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.Label;
@@ -7,13 +7,14 @@ import edu.stanford.nlp.process.CoreLabelTokenFactory;
 import edu.stanford.nlp.process.PTBTokenizer;
 import edu.stanford.nlp.process.TokenizerFactory;
 import edu.stanford.nlp.trees.*;
-import javafx.util.Pair;
 
 import java.io.StringReader;
 import java.util.*;
 
 public class GrammarsFactory {
     private static final HashMap<String, DeafGrammar> grammarList = new HashMap();
+
+
 
     public String getGrammar(String item){
 
@@ -26,12 +27,11 @@ public class GrammarsFactory {
                 PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
         List<CoreLabel> wordList = tokenizerFactory.getTokenizer(new StringReader(item)).tokenize();
         Tree tree = lp.apply(wordList);
+
         GrammaticalStructure gs = gsf.newGrammaticalStructure(tree);
         Collection<TypedDependency> depList = gs.typedDependenciesCollapsed();
 
-
         String result = "";
-
         for (Iterator<Tree> it = tree.iterator(); it.hasNext();) {
 
             Tree test = it.next();
@@ -69,7 +69,6 @@ public class GrammarsFactory {
                     // convert into spicific rules
                     result += grammar.convert(test) + " ";
                 }
-
 
             }
 
@@ -116,6 +115,5 @@ public class GrammarsFactory {
 
         return false;
     }
-
 
 }

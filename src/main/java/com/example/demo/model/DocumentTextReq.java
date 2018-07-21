@@ -1,13 +1,12 @@
 package com.example.demo.model;
 
-public class StringText {
+public class DocumentTextReq {
 
     public String text;
 
+    public DocumentTextReq() {}
 
-    public StringText() {}
-
-    public StringText(String text) {
+    public DocumentTextReq(String text) {
         this.text = text;
     }
 

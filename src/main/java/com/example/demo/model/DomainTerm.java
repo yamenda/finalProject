@@ -1,16 +1,16 @@
-package com.example.demo.Controller;
+package com.example.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordWithDomain {
+public class DomainTerm {
 
     String word;
     String domain;
     public List<String> synsetsIds;
 
 
-    public WordWithDomain() {
+    public DomainTerm() {
         synsetsIds = new ArrayList<>();
     }
 

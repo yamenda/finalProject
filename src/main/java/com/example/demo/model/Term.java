@@ -1,6 +1,6 @@
-package com.example.demo.Controller;
+package com.example.demo.model;
 
-public class words {
+public class Term {
 
     private String index;
     private String word;

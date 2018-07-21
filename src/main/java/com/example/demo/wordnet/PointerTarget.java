@@ -21,28 +21,28 @@ package com.example.demo.wordnet;
  */
 public interface PointerTarget {
 	public POS getPOS();
-	
+
 	/** Return a description of the target.  For a <code>Word</code>, this is it's lemma;
 	 * for a <code>Synset</code>, it's the concatenated lemma's of its <code>Word</code>s.
 	 */
 	public String getDescription();
-	
+
 	/** Return the long description of the target.  This is its description, appended by,
 	 * if it exists, a dash and it's gloss.
 	 */
 	public String getLongDescription();
-	
+
 	/** Return the outgoing <code>Pointer</code>s from the target -- those <code>Pointer</code>s
 	 * that have this object as their source.
 	 */
 	public Pointer[] getPointers();
-	
+
 	/** Return the outgoing <code>Pointer</code>s of type <var>type</var>. */
 	public Pointer[] getPointers(PointerType type);
-	
+
 	/** Return the targets of the outgoing <code>Pointer</code>s. */
 	public PointerTarget[] getTargets();
-	
+
 	/** Return the targets of the outgoing <code>Pointer</code>s that have type <var>type</var>. */
 	public PointerTarget[] getTargets(PointerType type);
 }

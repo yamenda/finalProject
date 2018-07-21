@@ -12,7 +12,7 @@ import java.util.*;
 
 /** A <code>Word</code> represents the lexical information related to a specific sense of an <code>IndexWord</code>.
  *
- * <code>Word</code>'s are linked by {@link Pointer}s into a network of lexically related words.
+ * <code>Word</code>'s are linked by {@link Pointer}s into a network of lexically related Term.
  * {@link Word#getTargets getTargets} retrieves the targets of these links, and
  * {@link Word#getPointers getPointers} retrieves the pointers themselves.
  *

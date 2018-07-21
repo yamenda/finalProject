@@ -16,7 +16,7 @@ import java.util.Vector;
 
 /** A <code>Synset</code>, or <b>syn</b>onym <b>set</b>, represents a record table <i>language</i><code>_synset</code> of the MultiWordNet database.
  * A <code>Synset</code> represents a concept, and contains a set of <code>Word</code>s and <code>Phrase</code>s, each of which has a sense
- * that names that concept (and each of which is therefore synonymous with the other words in the
+ * that names that concept (and each of which is therefore synonymous with the other Term in the
  * <code>Synset</code>).
  *
  * <code>Synset</code>'s are linked by {@link Pointer}s into a network of related concepts; this is the <it>Net</it>
@@ -87,7 +87,7 @@ public class Synset implements PointerTarget {
         String mysqlword = MysqlDictionary.encode(rs.getString("word"));
         String mysqlphrase = MysqlDictionary.encode(rs.getString("phrase"));
 
-        //Synset words
+        //Synset Term
         if (mysqlword != null) {
           tokenizer = new StringTokenizer(mysqlword.trim() , " ");
           wordCount = tokenizer.countTokens();
@@ -97,7 +97,7 @@ public class Synset implements PointerTarget {
             words[i] = new Word(this, i, lemma.replace('_', ' '));
           }
         }
-        //Phraset words
+        //Phraset Term
         if (mysqlphrase != null) {
           tokenizer = new StringTokenizer(mysqlphrase.trim() , " ");
           wordCount = tokenizer.countTokens();

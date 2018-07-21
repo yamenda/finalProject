@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.regrammar;
 
 import edu.stanford.nlp.trees.*;
 import rita.RiTa;
@@ -47,11 +47,15 @@ public class AdverbGrammar implements DeafGrammar {
                 sentenceList.put("adverbPlace",tDep.reln().getSpecific() + " " + RiTa.stem(tDep.dep().value()));
             }
 
-
+            //TODO : EDIT LIKE SIMPLE GRAMMAR
             if(tDep.reln().toString().equalsIgnoreCase("dobj")
                     || tDep.reln().toString().equalsIgnoreCase("amod")
                     || (tDep.reln().getShortName().equalsIgnoreCase("nmod") && tDep.reln().getSpecific().equalsIgnoreCase("to")) ) {
                 sentenceList.put("etc", RiTa.stem(tDep.dep().value()));
+            }
+
+            if(tDep.reln().toString().equalsIgnoreCase("neg")) {
+                sentenceList.put("negative", tDep.dep().value());
             }
 
         }
@@ -73,13 +77,25 @@ public class AdverbGrammar implements DeafGrammar {
         if(sentenceList.containsKey("adverbPlace")) {
             res += sentenceList.get("adverbPlace") + " ";
         }
-
-
-
-
-
-
+        if(sentenceList.containsKey("negative")) {
+            res += sentenceList.get("negative") + " ";
+        }
 
         return res;
     }
+
+
+    private TypedDependency checkTreeDep(Collection<TypedDependency> list, String dependency) {
+
+        for(Iterator<TypedDependency> it = list.iterator(); it.hasNext(); ) {
+            TypedDependency tDep = it.next();
+            if(tDep.reln().getShortName().toString().equalsIgnoreCase(dependency)) {
+                return tDep;
+            }
+        }
+        return null;
+    }
+
+
+
 }

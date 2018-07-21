@@ -38,7 +38,7 @@ public class PointerType {
     //new
     public static final PointerType INVOLVES = new PointerType("involves", "%i", "N>N | N>V | V>N | V>V", false);
     public static final PointerType ROLE = new PointerType("role", "#r", "N>N | N>V | V>N | V>V", false);
-    
+
     // Nouns and Adjectives
     public static final PointerType ATTRIBUTE = new PointerType("attribute", "=", "N>A", false);
     public static final PointerType IS_VALUE_OF = new PointerType("is value of", "=", "A>N", false);
@@ -63,7 +63,7 @@ public class PointerType {
     public static final PointerType IS_FORM_OF = new PointerType("is form of", "-f", "N>N", false);
     public static final PointerType HAS_FUNCTION = new PointerType("has function", "+:", "N>N", false);
     public static final PointerType IS_FUNCTION_OF = new PointerType("is function of", "-:", "N>N", false);
-    
+
     // Adjectives
     public static final PointerType SIMILAR_TO = new PointerType("similar", "&", "A>A", false);
     public static final PointerType PARTICIPLE_OF = new PointerType("participle of", "<", "A>V | LEXICAL", true );

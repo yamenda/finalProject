@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class Domain {
 
     String domainName;
-    List<WordWithDomain> wordwithdomain;
+    List<DomainTerm> wordwithdomain;
     int synsetNumber = 0;
     int weightArray[][] = new int[synsetNumber][synsetNumber];
     int weith;
@@ -49,11 +49,11 @@ public class Domain {
         this.domainName = domainName;
     }
 
-    public List<WordWithDomain> getWordwithdomain() {
+    public List<DomainTerm> getWordwithdomain() {
         return wordwithdomain;
     }
 
-    public void setWordwithdomain(List<WordWithDomain> wordwithdomain) {
+    public void setWordwithdomain(List<DomainTerm> wordwithdomain) {
         this.wordwithdomain = wordwithdomain;
     }
 
