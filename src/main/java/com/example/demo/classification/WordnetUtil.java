@@ -6,6 +6,7 @@ import com.example.demo.model.Term;
 import com.example.demo.wordnet.IndexWord;
 import com.example.demo.wordnet.MysqlDictionary;
 import com.example.demo.wordnet.POS;
+import com.example.demo.wordnet.Synset;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,9 @@ public class WordnetUtil {
 
         MysqlDictionary dictionary = new MysqlDictionary();
 
+        int counter = 0;
         for (String item: wordsArray) {
+            counter++;
             POS pos = map.get(item);
             if(!pos.getLabel().equals("temp")) {
                 //String itemsStem = RiTa.stem(item);
@@ -39,6 +42,7 @@ public class WordnetUtil {
                 word.setIndex("");
                 word.setWord(indexWords.getLemma());
                 word.setSynets(indexWords.getSynsetOffsets());
+                word.setPosition(counter);
                 list.add(word);
             }
         }
@@ -60,12 +64,13 @@ public class WordnetUtil {
             if(word.getSynets() !=  null) {
                 for (String synset: word.getSynets()) {
                     String domain = mysqlDictionary.getDomain(synset);
-//                    if(!specificDomains.contains(domain)){
-//                        continue;
-//                    }
+                    if(!specificDomains.contains(domain)){
+                        continue;
+                    }
                     if(!domain.equals("") && !existDomain.contains(domain)){
                         DomainTerm wordwithdomain = new DomainTerm();
                         wordwithdomain.setWord(word.getWord());
+                        wordwithdomain.setWordPosition(word.getPosition());
                         existDomain.add(domain);
                         wordwithdomain.setDomain(domain);
                         wordwithdomain.synsetsIds.add(synset);
@@ -132,6 +137,19 @@ public class WordnetUtil {
             }
         }
         return null;
+    }
+
+    public String getSynsetWord(String synsetOffset, POS pos) {
+        Synset synset = this.mysqlDictionary.getSynsetAt(pos, synsetOffset, "english" );
+        if(synset != null) {
+
+            if(synset.getWords().length > 1) {
+                return synset.getWord(1).getLemma();
+            }else {
+                return synset.getWord(0).getLemma();
+            }
+        }
+        return "";
     }
 
 }

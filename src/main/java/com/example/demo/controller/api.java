@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import rita.wordnet.jwnl.JWNLException;
 
 import java.util.*;
 
@@ -31,7 +32,7 @@ public class api {
 
     //getting all synsets ids related to every word in the text
     @RequestMapping(value = "/results", method = RequestMethod.POST)
-    public List<Domain> results(@RequestBody DocumentTextReq text) {
+    public List<Domain> results(@RequestBody DocumentTextReq text) throws JWNLException {
         String alltext = text.text;
 
 //        List<Term> list = getSynsets(alltext);

@@ -157,7 +157,7 @@ public class MysqlDictionary implements DictionaryDatabase {
     }
 
 
-    protected Synset getSynsetAt(POS pos, String offset, String language) {
+    public Synset getSynsetAt(POS pos, String offset, String language) {
         DatabaseKey key = new DatabaseKey(pos, offset, language);
         Synset synset = (Synset) entityCache.get(key);
         if (synset == null) {
@@ -317,7 +317,6 @@ public class MysqlDictionary implements DictionaryDatabase {
         int rows = 0;
         String domain = "";
         try {
-
             String sql = "select english from semfield where synset = \"" + id + "\"";
             rs = this.stmt.executeQuery(sql);
 
@@ -336,7 +335,6 @@ public class MysqlDictionary implements DictionaryDatabase {
             System.out.println("Connection - query problems with MySql");
             e.printStackTrace(System.out);
         }
-
         return domain;
     }
 

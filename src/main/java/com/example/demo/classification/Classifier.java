@@ -3,12 +3,14 @@ package com.example.demo.classification;
 import com.example.demo.model.Domain;
 import com.example.demo.model.DomainTerm;
 import com.example.demo.model.Term;
+import org.apache.xalan.xsltc.DOM;
 import rita.RiTa;
+import rita.RiWordNet;
+import rita.wordnet.jwnl.JWNLException;
+import rita.wordnet.jwnl.wndata.IndexWord;
+import rita.wordnet.jwnl.wndata.POS;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Classifier {
 
@@ -19,9 +21,10 @@ public class Classifier {
     public Classifier() {
         this.tokenizer = new Tokenizer();
         this.wordnetUtil = new WordnetUtil();
+        this.disambiguater = new Disambiguator();
     }
 
-    public List<Domain> classify(String text) {
+    public List<Domain> classify(String text) throws JWNLException {
         List<Term> list = wordnetUtil.getSynsets(text);
 
         List<DomainTerm> listWordDomain = wordnetUtil.getWordsWithDomain(list);
@@ -30,6 +33,12 @@ public class Classifier {
 
         List<Domain> domainListWithWeith = calculateWeight(domainList,text);
 
+        Domain bestWeightDomain = this.getBestWeightDomain(domainList);
+
+        List<DomainTerm> allTermsInDomain = this.getAllTermInSpicificDomain(listWordDomain, bestWeightDomain);
+        //Under test disambiguate
+        List<DomainTerm> afterDisambiguate = disambiguater.disambiguate(allTermsInDomain);
+
         return domainList;
     }
 
@@ -37,9 +46,9 @@ public class Classifier {
     public List<Domain> calculateWeight(List<Domain> list, String text) {
 
 //        List<Domain> newList = list;
-//
 //        for (String smallText: separeatedtext) {
 //        }
+
         for (Domain domain:list) {
             domain = calculateWeightDomain(domain, text);
             int weith = sumArray(domain.getWeightArray());
@@ -75,7 +84,7 @@ public class Classifier {
         // for (DomainTerm word: domain.getWordwithdomain()) {
         //String synsetId = word.synsetsIds.get(0);
 
-        //diambiguse process here : TODO
+        //disambiguse process here : TODO
 
         for(int i = 0; i < temp.length; i++) {
             for(int j = 0; j < temp.length; j++) {
@@ -115,5 +124,24 @@ public class Classifier {
         return res;
     }
 
+    public Domain getBestWeightDomain(List<Domain> list) {
+        Domain res = list.get(0);
+        for (Domain domain : list) {
+            if(res.getWeith() < domain.getWeith()) {
+                res = domain;
+            }
+        }
+        return res;
+    }
+
+    public List<DomainTerm> getAllTermInSpicificDomain(List<DomainTerm> domainTerms, Domain domain) {
+        List<DomainTerm> resultsList = new ArrayList<>();
+        for (DomainTerm domainTerm: domainTerms) {
+            if(domainTerm.getDomain().equalsIgnoreCase(domain.getDomainName())) {
+                resultsList.add(domainTerm);
+            }
+        }
+        return resultsList;
+    }
 
 }

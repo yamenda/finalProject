@@ -5,6 +5,15 @@ public class Term {
     private String index;
     private String word;
     private String[] synets;
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
     public String[] getSynets() {
         return synets;
