@@ -56,4 +56,25 @@ public class DomainTerm {
         this.domain = domain;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DomainTerm that = (DomainTerm) o;
+
+        if (wordPosition != that.wordPosition) return false;
+        if (!word.equals(that.word)) return false;
+        if (domain != null ? !domain.equals(that.domain) : that.domain != null) return false;
+        if (synsetsIds != null ? !synsetsIds.equals(that.synsetsIds) : that.synsetsIds != null) return false;
+        if (rightSynsetOffset != null ? !rightSynsetOffset.equals(that.rightSynsetOffset) : that.rightSynsetOffset != null)
+            return false;
+        return synsetWord != null ? synsetWord.equals(that.synsetWord) : that.synsetWord == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return word.hashCode();
+    }
 }

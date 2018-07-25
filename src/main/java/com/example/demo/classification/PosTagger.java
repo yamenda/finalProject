@@ -42,6 +42,8 @@ public class PosTagger {
                 res.add(POS.ADJ);
             }else if(pos[i].equals("rb") || pos[i].equals("rbr")  || pos[i].equals("rbs") ) {
                 res.add(POS.ADV);
+            }else if(pos[i].equals("prp")) {
+                res.add(new POS("prp" , "prp"));
             }else {
                 res.add(temp);
             }

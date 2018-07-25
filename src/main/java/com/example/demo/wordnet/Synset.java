@@ -137,6 +137,80 @@ public class Synset implements PointerTarget {
           }
   }
 
+// static Synset parseSynsetWord(MysqlDictionary dictionary, String word, String language) {
+//          try {
+//                  return new Synset(dictionary).initializeFromWord(dictionary, word, language);
+//          } catch (RuntimeException e) {
+//                  System.err.println("while parsing parseSynset(...)");
+//                  throw e;
+//          }
+//  }
+
+
+//  Synset initializeFromWord(MysqlDictionary dictionary, String word, String language) {
+//    //this.offset = offset;
+//    this.isAdjectiveCluster = false;
+//    //this.pos = pos;
+//    this.language = language;
+//
+//    ResultSet rs;
+//
+//    try {
+//      rs = dictionary.stmt.executeQuery("SELECT word,phrase,gloss,english FROM " + language + "_synset LEFT JOIN semfield on id=synset WHERE word = \"" + " " + word + "\"");
+//
+//
+//      //String sql = "SELECT word,phrase,gloss,english FROM " + language + "_synset LEFT JOIN semfield on id=synset WHERE id = \"" + offset +"\"";
+//      //rs = stmt.executeQuery(sql);
+//
+//      //System.err.println("Synset initializeFrom(ROWS: " + rs.getRow() + " (QUERY: " + sql + ")");
+//
+//      while (rs.next()) {
+//        StringTokenizer tokenizer;
+//        int wordCount;
+//        String mysqlword = MysqlDictionary.encode(rs.getString("word"));
+//        String mysqlphrase = MysqlDictionary.encode(rs.getString("phrase"));
+//
+//        //Synset Term
+//        if (mysqlword != null) {
+//          tokenizer = new StringTokenizer(mysqlword.trim() , " ");
+//          wordCount = tokenizer.countTokens();
+//          words = new Word[wordCount];
+//          for (int i = 0; i < wordCount; i++) {
+//            String lemma = tokenizer.nextToken();
+//            words[i] = new Word(this, i, lemma.replace('_', ' '));
+//          }
+//        }
+//        //Phraset Term
+//        if (mysqlphrase != null) {
+//          tokenizer = new StringTokenizer(mysqlphrase.trim() , " ");
+//          wordCount = tokenizer.countTokens();
+//          phraset = new Word[wordCount];
+//          for (int i = 0; i < wordCount; i++) {
+//            String lemma = tokenizer.nextToken();
+//            phraset[i] = new Word(this, i, lemma.replace('_', ' '));
+//          }
+//        }
+//
+//        //Gloss
+//        this.gloss = MysqlDictionary.encode(rs.getString("gloss"));
+//        //Domain
+//        this.domain = MysqlDictionary.encode(rs.getString("english"));
+//
+//      }
+//      rs.close();
+//
+//    } catch (SQLException E) {
+//      System.out.println("IndexWord.java - initializeFrom()");
+//      System.out.println("Connection - query problems with MySql");
+//      E.printStackTrace(System.out);
+//    }
+//
+//    //this.pointers = new Pointer[ptrs.size()];
+//    //ptrs.copyInto(pointers);
+//
+//    return this;
+//  }
+
 
 
 

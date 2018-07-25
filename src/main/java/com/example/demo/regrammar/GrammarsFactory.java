@@ -6,6 +6,8 @@ import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.process.CoreLabelTokenFactory;
 import edu.stanford.nlp.process.PTBTokenizer;
 import edu.stanford.nlp.process.TokenizerFactory;
+import edu.stanford.nlp.simple.Document;
+import edu.stanford.nlp.simple.Sentence;
 import edu.stanford.nlp.trees.*;
 
 import java.io.StringReader;
@@ -14,7 +16,22 @@ import java.util.*;
 public class GrammarsFactory {
     private static final HashMap<String, DeafGrammar> grammarList = new HashMap();
 
+    public String reGrammar(String text) {
 
+        Document doc = new Document(text);
+        Properties prop = new Properties();
+
+        List<Sentence> sentences = doc.sentences();
+
+        String finalRes = "";
+        for (Sentence item : doc.sentences()) {
+            String afterConverting = this.getGrammar(item.text());
+            item.text().replace(item.text(), afterConverting);
+            finalRes += afterConverting;
+        }
+
+        return finalRes;
+    }
 
     public String getGrammar(String item){
 

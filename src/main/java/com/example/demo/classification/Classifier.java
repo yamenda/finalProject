@@ -9,6 +9,7 @@ import rita.RiWordNet;
 import rita.wordnet.jwnl.JWNLException;
 import rita.wordnet.jwnl.wndata.IndexWord;
 import rita.wordnet.jwnl.wndata.POS;
+import rita.wordnet.jwnl.wndata.Synset;
 
 import java.util.*;
 
@@ -26,20 +27,18 @@ public class Classifier {
 
     public List<Domain> classify(String text) throws JWNLException {
         List<Term> list = wordnetUtil.getSynsets(text);
-
         List<DomainTerm> listWordDomain = wordnetUtil.getWordsWithDomain(list);
-
         List<Domain> domainList = wordnetUtil.getDomains(listWordDomain);
-
-        List<Domain> domainListWithWeith = calculateWeight(domainList,text);
-
-        Domain bestWeightDomain = this.getBestWeightDomain(domainList);
-
-        List<DomainTerm> allTermsInDomain = this.getAllTermInSpicificDomain(listWordDomain, bestWeightDomain);
-        //Under test disambiguate
-        List<DomainTerm> afterDisambiguate = disambiguater.disambiguate(allTermsInDomain);
-
+        List<Domain> domainListAfterDisambiguate = disambiguater.disambiguate(domainList);
+        List<Domain> domainListWithWeith = calculateWeight(domainListAfterDisambiguate,text);
+//      Domain bestWeightDomain = this.getBestWeightDomain(domainListWithWeith);
         return domainList;
+    }
+
+    public List<DomainTerm> getListWordDomain(String text) {
+        List<Term> list = wordnetUtil.getSynsets(text);
+        List<DomainTerm> listWordDomain = wordnetUtil.getWordsWithDomain(list);
+        return listWordDomain;
     }
 
     //if we need to separate the text by ,
@@ -125,12 +124,29 @@ public class Classifier {
     }
 
     public Domain getBestWeightDomain(List<Domain> list) {
-        Domain res = list.get(0);
+        Domain res = new Domain();
+        res.setDomainName("general");
+        if(!list.isEmpty()) {
+            res = list.get(0);
+        }
+
         for (Domain domain : list) {
             if(res.getWeith() < domain.getWeith()) {
                 res = domain;
             }
         }
+
+        if(this.isGeneralDomain(list)){
+            res = new Domain();
+            res.setDomainName("General");
+            List<DomainTerm> generalWords = new ArrayList<>();
+            for (Domain domain: list) {
+                generalWords.add(domain.getWordwithdomain().get(0));
+            }
+            res.setWordwithdomain(generalWords);
+            res.setWeith(list.size());
+        }
+
         return res;
     }
 
@@ -142,6 +158,17 @@ public class Classifier {
             }
         }
         return resultsList;
+    }
+
+    public boolean isGeneralDomain(List<Domain> list) {
+        boolean check = true;
+        for (Domain domain: list) {
+            if(domain.getWeith() > 1) {
+                check = false;
+                break;
+            }
+        }
+        return check;
     }
 
 }

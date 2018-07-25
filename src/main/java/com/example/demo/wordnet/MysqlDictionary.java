@@ -167,6 +167,16 @@ public class MysqlDictionary implements DictionaryDatabase {
         return synset;
     }
 
+//    public Synset getSynsetByWordAt(POS pos, String word, String language) {
+//        DatabaseKey key = new DatabaseKey(pos, word, language);
+//        Synset synset = (Synset) entityCache.get(key);
+//        if (synset == null) {
+//            synset = Synset.parseSynsetWord(this, word,language);
+//            entityCache.put(key, synset);
+//        }
+//        return synset;
+//    }
+
 
     //
     // Lookup functions
@@ -232,6 +242,7 @@ public class MysqlDictionary implements DictionaryDatabase {
     }
 
 
+
     public Synset[] synsets(POS pos, String language) {
         ResultSet rs;
         Synset[] syns = null;
@@ -272,7 +283,6 @@ public class MysqlDictionary implements DictionaryDatabase {
         String wordString = " " + word + " ";
         int rows = 0;
         try {
-
             String sql = "select * from " + language + "_synset where word = \" " + word + " \"";
             rs = this.stmt.executeQuery(sql);
 

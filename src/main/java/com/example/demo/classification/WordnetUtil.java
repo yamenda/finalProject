@@ -64,7 +64,10 @@ public class WordnetUtil {
             if(word.getSynets() !=  null) {
                 for (String synset: word.getSynets()) {
                     String domain = mysqlDictionary.getDomain(synset);
-                    if(!specificDomains.contains(domain)){
+//                    if(!specificDomains.contains(domain)){
+//                        continue;
+//                    }
+                    if(domain.equalsIgnoreCase("Factotum")){
                         continue;
                     }
                     if(!domain.equals("") && !existDomain.contains(domain)){
