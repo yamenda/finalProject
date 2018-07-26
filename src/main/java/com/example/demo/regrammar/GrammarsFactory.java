@@ -48,6 +48,10 @@ public class GrammarsFactory {
         GrammaticalStructure gs = gsf.newGrammaticalStructure(tree);
         Collection<TypedDependency> depList = gs.typedDependenciesCollapsed();
 
+        TreePrint treePrint = new TreePrint("penn,typedDependenciesCollapsed");
+        treePrint.printTree(tree);
+
+
         String result = "";
         for (Iterator<Tree> it = tree.iterator(); it.hasNext();) {
 

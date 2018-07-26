@@ -47,10 +47,10 @@ public class SimpleGrammar implements DeafGrammar {
                 if(tDep.reln().toString().equalsIgnoreCase("dobj")) {
                     List<TypedDependency> rightConj = this.getRightConj(conjList, tDep.dep().value());
 
-                    String res = RiTa.stem(tDep.dep().value()) + " ";
+                    String res = tDep.dep().value() + " ";
                     if(!rightConj.isEmpty()) {
                         for (TypedDependency conj: rightConj) {
-                            res += conj.reln().getSpecific() + " " + RiTa.stem(conj.dep().value()) + " " ;
+                            res += conj.reln().getSpecific() + " " + conj.dep().value() + " " ;
                         }
                     }
                     sentenceList.put("etc", res);

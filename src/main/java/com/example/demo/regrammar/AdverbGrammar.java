@@ -50,8 +50,9 @@ public class AdverbGrammar implements DeafGrammar {
             //TODO : EDIT LIKE SIMPLE GRAMMAR
             if(tDep.reln().toString().equalsIgnoreCase("dobj")
                     || tDep.reln().toString().equalsIgnoreCase("amod")
+                    || tDep.reln().toString().equalsIgnoreCase("compound")
                     || (tDep.reln().getShortName().equalsIgnoreCase("nmod") && tDep.reln().getSpecific().equalsIgnoreCase("to")) ) {
-                sentenceList.put("etc", RiTa.stem(tDep.dep().value()));
+                sentenceList.put("etc", tDep.dep().value());
             }
 
             if(tDep.reln().toString().equalsIgnoreCase("neg")) {

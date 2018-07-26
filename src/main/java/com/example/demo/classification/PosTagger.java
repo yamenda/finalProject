@@ -1,7 +1,11 @@
 package com.example.demo.classification;
 
 import com.example.demo.wordnet.POS;
+import edu.stanford.nlp.pipeline.POSTaggerAnnotator;
+import edu.stanford.nlp.tagger.common.Tagger;
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import rita.RiTa;
+import rita.RiWordNet;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,13 +25,33 @@ public class PosTagger {
         String[] wordString = tokenizer.tokenize(text);
 
         List<POS> posArray = this.convertPos(posString);
-
         Map<String,POS> map = new HashMap<>();
 
         for (int i = 0 ; i < wordString.length ; i++) {
             map.put(wordString[i],posArray.get(i));
         }
-        return map;
+
+        //TODO: this section is under test
+        Map<String,POS> mapFinalRes = new HashMap<>();
+        RiWordNet wordnet = new RiWordNet("C:\\wn3.1.dict\\dict\\");
+        for (Map.Entry<String, POS> entry : map.entrySet()) {
+            if(entry.getValue().equals(POS.VERB)) {
+                String item = entry.getKey();
+                String itemPos = RiTa.getBestPos(item);
+                String afterNomin = "";
+                if(itemPos.equalsIgnoreCase("vbg")) {
+                    afterNomin = wordnet.getNominalizations(item, "n")[0];
+                    //change the key TODO
+                    mapFinalRes.put(afterNomin, POS.VERB);
+                }else {
+                    mapFinalRes.put(entry.getKey(),entry.getValue());
+                }
+            }else {
+                mapFinalRes.put(entry.getKey(),entry.getValue());
+            }
+        }
+
+        return mapFinalRes;
     }
 
     public List<POS> convertPos(String[] pos) {

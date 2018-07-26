@@ -20,18 +20,6 @@ public class ReGrammerController {
     @RequestMapping(value = "/regrammer", method = RequestMethod.POST)
     public String grammarProcess(@RequestBody DocumentTextReq textObj){
         String text = textObj.text;
-//        Document doc = new Document(text);
-//        Properties prop = new Properties();
-//
-//        List<Sentence> sentences = doc.sentences();
-//        gFactory = new GrammarsFactory();
-//
-//        String finalRes = "";
-//        for (Sentence item : doc.sentences()) {
-//            String afterConverting = gFactory.getGrammar(item.text());
-//            item.text().replace(item.text(), afterConverting);
-//            finalRes += afterConverting;
-//        }
         gFactory = new GrammarsFactory();
         return gFactory.reGrammar(text);
     }

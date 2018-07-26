@@ -7,6 +7,8 @@ import com.example.demo.wordnet.IndexWord;
 import com.example.demo.wordnet.MysqlDictionary;
 import com.example.demo.wordnet.POS;
 import com.example.demo.wordnet.Synset;
+import rita.RiTa;
+import rita.RiWordNet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,21 @@ public class WordnetUtil {
 
     public List<Term> getSynsets(String alltext) {
         List<Term> list = new ArrayList<>();
+
         String[] wordsArray = tokenizer.tokenize(alltext);
+
+        //TODO under test remove the ing
+        String[] wordsPos = RiTa.getPosTags(alltext);
+        RiWordNet wordnet = new RiWordNet("C:\\wn3.1.dict\\dict\\");
+        for (int i= 0 ; i<wordsArray.length ; i++) {
+            if(wordsPos[i].equalsIgnoreCase("vbg")) {
+                String[] temp = wordnet.getNominalizations(wordsArray[i],"n");
+                if(temp.length != 0) {
+                    wordsArray[i] = temp[0];
+                }
+            }
+        }
+
         Map<String, POS> map = posTagger.pos(alltext);
 
         MysqlDictionary dictionary = new MysqlDictionary();

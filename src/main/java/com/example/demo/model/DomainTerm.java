@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class DomainTerm {
@@ -77,4 +78,6 @@ public class DomainTerm {
     public int hashCode() {
         return word.hashCode();
     }
+
+
 }

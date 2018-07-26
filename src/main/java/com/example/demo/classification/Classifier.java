@@ -136,16 +136,18 @@ public class Classifier {
             }
         }
 
-        if(this.isGeneralDomain(list)){
-            res = new Domain();
-            res.setDomainName("General");
-            List<DomainTerm> generalWords = new ArrayList<>();
-            for (Domain domain: list) {
-                generalWords.add(domain.getWordwithdomain().get(0));
-            }
-            res.setWordwithdomain(generalWords);
-            res.setWeith(list.size());
-        }
+
+//        //under test : it is cause a problem
+//        if(this.isGeneralDomain(list)){
+//            res = new Domain();
+//            res.setDomainName("General");
+//            List<DomainTerm> generalWords = new ArrayList<>();
+//            for (Domain domain: list) {
+//                generalWords.add(domain.getWordwithdomain().get(0));
+//            }
+//            res.setWordwithdomain(generalWords);
+//            res.setWeith(list.size());
+//        }
 
         return res;
     }
@@ -169,6 +171,67 @@ public class Classifier {
             }
         }
         return check;
+    }
+
+    public boolean containsDomainTermWord(Collection<? extends DomainTerm> collection, String word)
+    {
+        return collection.stream().anyMatch(a -> a.getWord().equals(word));
+    }
+
+    private boolean isExistInMultiDomain(List<Domain> list , String word) {
+        int counter = 0;
+        for (Domain domain:list) {
+            if(this.containsDomainTermWord(domain.getWordwithdomain(), word)) {
+                counter++;
+            }
+        }
+        if (counter > 1 ) {
+            return true;
+        }
+        return false;
+    }
+
+    private DomainTerm getDomainTermByWord(Domain domain, String word) {
+        for (DomainTerm domainTerm: domain.getWordwithdomain()) {
+            if(domainTerm.getWord().equalsIgnoreCase(word)) {
+                return domainTerm;
+            }
+        }
+        return null;
+    }
+
+    private String getWordSynsetOffset(List<Domain> list, String word) {
+
+        String res = "";
+        Domain bestDomain = this.getBestWeightDomain(list);
+        if(!this.isExistInMultiDomain(list,word)) {
+            for (Domain domain: list) {
+                if(this.containsDomainTermWord(domain.getWordwithdomain(), word)) {
+                    DomainTerm domainTerm = this.getDomainTermByWord(domain, word);
+                    res = domainTerm.synsetsIds.get(0);
+                    break;
+                }
+            }
+        }
+        else {
+            if(this.containsDomainTermWord(bestDomain.getWordwithdomain(), word)) {
+                DomainTerm domainTerm = this.getDomainTermByWord(bestDomain, word);
+                res = domainTerm.synsetsIds.get(0);
+            }
+        }
+        return res;
+    }
+
+    public Map<String, String> getWordsSynset(String text, List<Domain> list) {
+        Map<String, String> mapRes = new HashMap<>();
+
+        String[] tokenz = tokenizer.tokenize(text);
+
+        for (String item: tokenz) {
+            String synsetOffset = this.getWordSynsetOffset(list,item);
+            mapRes.put(item, synsetOffset);
+        }
+        return mapRes;
     }
 
 }
